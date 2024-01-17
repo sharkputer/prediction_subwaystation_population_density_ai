@@ -68,6 +68,7 @@ for df in chunks:
 
 # 모든 청크를 하나의 DataFrame으로 결합
 final_df = pd.concat(preprocessed_dfs, ignore_index=True)
+final_df.fillna(0, inplace=True)
 
 # 전처리된 데이터 저장
 final_df.to_csv('tw_data_preprocessed.csv', index=False)
